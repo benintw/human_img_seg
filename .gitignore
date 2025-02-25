@@ -38,3 +38,5 @@ ENV/
 
 # Model checkpoints (if they're large)
 models/*.pth
+*.pth
+checkpoints/*.pth

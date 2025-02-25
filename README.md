@@ -25,3 +25,9 @@ docker run -d -p 8000:8000 benchen666/human-img-seg:latest
 ## Stop Docker Container
 
 docker stop human-img-seg
+
+## Model Weights
+
+The model weights are not included in this repository due to size constraints. You can:
+
+use Docker: `docker pull benchen666/human-img-seg:latest`
