@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Human Image Segmentation</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='/css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Human Image Segmentation</h1>
+
+      <div class="upload-section">
+        <input type="file" id="imageInput" accept="image/*" />
+        <button onclick="processImage()">Process Image</button>
+      </div>
+
+      <div class="loading" id="loading" style="display: none">
+        <div class="spinner"></div>
+        Processing...
+      </div>
+
+      <div class="results" id="results">
+        <div class="image-container">
+          <h3>Input Image</h3>
+          <img id="inputImage" src="" alt="Input image" style="display: none" />
+        </div>
+        <div class="image-container">
+          <h3>Segmentation Result</h3>
+          <img
+            id="outputImage"
+            src=""
+            alt="Output image"
+            style="display: none"
+          />
+        </div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', path='/js/main.js') }}"></script>
+  </body>
+</html>

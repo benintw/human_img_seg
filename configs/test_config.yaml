@@ -1,0 +1,36 @@
+random_seed: 42
+
+data:
+  # data configs
+  csv_file: "./data/train.csv"
+  data_dir: "./data"
+  image_size: 320
+  num_workers: 4
+  batch_size: 32
+
+prediction:
+  output_dir: "./predictions"
+
+training:
+  checkpoint:
+    save_best_only: true
+    monitor: "val_loss"
+    mode: "min"
+    save_dir: "./checkpoints"
+    save_name: "best_model.pth"
+
+logging:
+  log_dir: "logs"
+  save_freq: 5 # save checkpoints every N epochs
+
+model:
+  # model configs
+  name: "efficientnet-b0"
+  pretrained: true
+  encoder: "timm-efficientnet-b0"
+  weights: "imagenet"
+  activation: null # change from None to null
+  dice_weight: 1.0
+  dice_mode: "binary"
+  bce_weight: 1.0
+  in_channels: 3
