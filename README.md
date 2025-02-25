@@ -16,15 +16,21 @@ A web application for segmenting humans from images using deep learning.
 
 ## Pull Docker Image
 
+```bash
 docker pull benchen666/human-img-seg:latest
+```
 
 ## Run Docker Container
 
+```bash
 docker run -d -p 8000:8000 benchen666/human-img-seg:latest
+```
 
 ## Stop Docker Container
 
+```bash
 docker stop human-img-seg
+```
 
 ## Model Weights
 
