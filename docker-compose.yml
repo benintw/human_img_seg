@@ -1,12 +1,10 @@
-version: "3.8"
-
-services:
-  web:
-    build: .
-    ports:
-      - "8000:8000"
-    volumes:
-      - ./web/static/uploads:/app/web/static/uploads
-      - ./web/static/output:/app/web/static/output
-    environment:
-      - DEVICE=cpu
+services: # Defines the different services/containers that make up your application
+  web: # Name of the service - in this case, a web service
+    build: . # Tells Docker to build the image using the Dockerfile in the current directory (.)
+    ports: # Configures port mapping between host and container
+      - "8000:8000" # Maps port 8000 on host to port 8000 in container (host:container)
+    volumes: # Defines volume mappings for persistent storage
+      - ./web/static/uploads:/app/web/static/uploads # Maps local uploads directory to container
+      - ./web/static/output:/app/web/static/output # Maps local output directory to container
+    environment: # Sets environment variables for the container
+      - DEVICE=cpu # Sets DEVICE environment variable to "cpu"

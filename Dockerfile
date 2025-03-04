@@ -14,15 +14,13 @@ RUN apt-get update && apt-get install -y \
 RUN pip install poetry
 
 # copy only dependency files first
-#COPY pyproject.toml poetry.lock README.md ./
 COPY . .
 
 # install dependencies
 RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi
 
-# copy the rest of the application
-COPY . .
+
 
 
 # create directories for uploads and ensure proper permissions

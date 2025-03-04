@@ -111,6 +111,7 @@ def get_transforms(config: dict[str, Any]) -> tuple[A.Compose, A.Compose]:
 
 def get_dataloaders(config: dict[str, Any]) -> tuple[DataLoader, DataLoader]:
     df = pd.read_csv(config["data"]["csv_file"])
+    
     train_df, val_df = train_test_split(
         df,
         test_size=config["data"]["train_val_split"],

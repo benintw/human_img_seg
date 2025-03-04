@@ -40,3 +40,5 @@ ENV/
 models/*.pth
 *.pth
 checkpoints/*.pth
+
+notebook/
